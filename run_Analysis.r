@@ -51,9 +51,11 @@ merge_data <- function(workingdirectory) {
 meansd_data <- function(X, workingdirectory) {
     featurefile <- paste(workingdirectory,"/features.txt", sep="")
     features <- read.table(featurefile)
-    meansdcolIndex <- c(grep("mean", features[,2]),grep("std", features[,2]))
+    meansdcolIndex <- c(grep("mean()", features[,2], fixed = TRUE),grep("std()", 
+                                            features[,2], fixed = TRUE))
     Xmeansd <- X[,meansdcolIndex]
-    colnames(Xmeansd) <- c(grep("mean", features[,2], value = TRUE),grep("std", features[,2], value = TRUE))
+    colnames(Xmeansd) <- c(grep("mean()", features[,2], value = TRUE, 
+        fixed = TRUE),grep("std()", features[,2], value = TRUE, fixed = TRUE))
     return(Xmeansd)
 }
 
