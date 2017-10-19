@@ -10,8 +10,9 @@ run_Analysis.r script has been created outlining the steps to clean the data
 Use the instructions below to execute the script
 
 =============================================
+- To run the script successfully you have to install the 'dplyr' R package
 
-- Download the data in your working directory
+- Download the data in your working directory. You can download using OS features or use "Download.file()" function in R
 
 - Extract the zip file to the directory UCI HAR dataset
 
